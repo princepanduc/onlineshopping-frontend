@@ -26,7 +26,7 @@ export class OrderDetailsComponent {
   }
 
   approvedData(id: number) {
-    this.orderService.updateStatus(id, 'Delivered').subscribe((result) => {
+    this.orderService.updateStatus(id, 'Order Approved').subscribe((result) => {
       this.ngOnInit();
     })
   }

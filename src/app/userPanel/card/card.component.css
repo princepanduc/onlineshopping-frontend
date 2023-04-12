@@ -1,4 +1,4 @@
-/* .cart-page{
+ .cart-page{
     margin-top: 40px;
     margin-bottom: 50px;
     margin-left: 20px;
@@ -6,9 +6,6 @@
 }
 .cart-page h1{
     text-align: center;
-}
-.details {
-   
 }
 .details img{
     height: 100px;
@@ -36,5 +33,4 @@
 .summary ul li{
     display: flex;
     justify-content: space-between;
-} */
-
+} 

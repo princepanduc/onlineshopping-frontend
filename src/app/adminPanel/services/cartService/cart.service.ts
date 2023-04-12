@@ -45,7 +45,7 @@ export class CartService {
   //   return this.http.delete('http://localhost:8080/cart/delete/' + cartId);
   // }
 
-  removeToCart(cartId:number): Observable<Cart> {
+  removeFromCart(cartId:number): Observable<Cart> {
     console.warn("hit to removeCart/"+cartId)
     return this.http.delete<Cart>('http://localhost:8080/cart/delete/' + cartId, headerOption).pipe(
       tap(() => {

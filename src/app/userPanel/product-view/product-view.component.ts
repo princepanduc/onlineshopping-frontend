@@ -100,7 +100,7 @@ export class ProductViewComponent {
       this.productService.removeItemFromCart(pro_id);
       this.removeCart = false;
     } else {
-      this.cartService.removeToCart(this.cartData.cart_id)
+      this.cartService.removeFromCart(this.cartData.cart_id)
         .subscribe((result) => {
           let user = localStorage.getItem('user');
           let userId = user && JSON.parse(user).id;
@@ -108,7 +108,7 @@ export class ProductViewComponent {
         })
     }
     this.removeCart = false
-    alert("Remove to cart Completed!!")
+    alert("Remove From cart Completed!!")
   }
 
 

@@ -29,14 +29,14 @@ export class CardComponent {
     private productService:ProductService,
     private router:Router
     ){ }
-     
+
 
   ngOnInit(): void {
     this.loadDetails();
   }
 
-  removeToCart(cartId:number|undefined){
-    cartId && this.cartData && this.cartService.removeToCart(cartId)
+  removeFromCart(cartId:number|undefined){
+    cartId && this.cartData && this.cartService.removeFromCart(cartId)
     .subscribe((result)=>{
       this.loadDetails();
     })
@@ -67,7 +67,7 @@ export class CardComponent {
         if(item.pro_qnt){
           price = price + (+item.pro_price* +item.pro_qnt);
         }
-        
+
       });
       this.priceSummery.price = price;
       this.priceSummery.discount=price*.0;
@@ -84,7 +84,7 @@ export class CardComponent {
       this.coupon = result;
           if(this.coupon !== null){
         if(this.priceSummery.price >= this.coupon.minimumRange){
-          this.priceSummery.price 
+          this.priceSummery.price
           this.priceSummery.discount=(this.priceSummery.price*this.coupon.percentage) / 100;
           this.priceSummery.tax = +(this.priceSummery.price*.10).toFixed(3);
           this.priceSummery.delivery = 100;
@@ -99,7 +99,7 @@ export class CardComponent {
   redirectToCheckoutPage(){
     if(localStorage.getItem('user')){
       localStorage.setItem('totalPrice',JSON.stringify(this.priceSummery.total));
-      
+
       this.router.navigate(['/checkout'])
     }else{
       this.router.navigate(['/UserAuth'])
