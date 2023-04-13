@@ -89,13 +89,13 @@ export class ProductViewComponent {
         });
 
       }
-      // alert("Add to cart Completed!!")
+      // alert("Added to cart!!")
       this.router.navigate(['/card'])
       this.ngOnInit();
     }
   }
 
-  removeToCart(pro_id: number) {
+  removeFromCart(pro_id: number) {
     if (!localStorage.getItem('user')) {
       this.productService.removeItemFromCart(pro_id);
       this.removeCart = false;
@@ -108,7 +108,7 @@ export class ProductViewComponent {
         })
     }
     this.removeCart = false
-    alert("Remove From cart Completed!!")
+    alert("Product Removed From cart!!")
   }
 
 
