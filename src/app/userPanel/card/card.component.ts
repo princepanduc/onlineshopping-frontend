@@ -53,10 +53,10 @@ export class CardComponent {
           }
         });
         this.priceSummery.price = price;
-        this.priceSummery.discount=price*.0;
-        this.priceSummery.tax = +(price*.10).toFixed(3);
+        this.priceSummery.discount=price*0.05;
+        this.priceSummery.tax = +(price*.01).toFixed(3);
         this.priceSummery.delivery = 100;
-        this.priceSummery.total = price+100+(price*.10)-(this.priceSummery.discount);
+        this.priceSummery.total = price+100+(price*.01)-(this.priceSummery.discount);
         this.priceSummery.total =+ this.priceSummery.total.toFixed(3)
       });
     }else{
