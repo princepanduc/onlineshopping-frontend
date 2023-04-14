@@ -91,8 +91,8 @@
                     <p class="text-center">{{product.pro_desc}}</p>
                     <h2 class="text-center text-danger">Price: $$ {{product.pro_price}}</h2>
                     <div class="text-center">
-                        <button href="" class="btn-card"> ADD TO CART</button>
-                        <button href="" class="btn-view" [routerLink]="['/product/',product.pro_id,'view']">VIEW</button>
+                        <button href="" class="btn-card">VIEW </button>
+                        <button href="" class="btn-view" [routerLink]="['/product/',product.pro_id,'view']">ADD TO CART</button>
                     </div>
                 </div>
             </div>
@@ -102,11 +102,11 @@
 <!-- RECENT PRODUCTS -->
 
 <!-- FEATURED PRODUCTS Start -->
-<div class="container">
+<!--<div class="container">
     <h2>FEATURED PRODUCTS</h2>
     <mat-divider></mat-divider><br>
     <div class="container row ">
-        <div class="col-md-4">
+        <div class="col-md-4" *ngFor = "let product of allProduct">
             <div class="card shadow">
                 <div class="hoverImg">
                     <img src="assets/images/product-1.jpg" alt="" class="card-img-top">
@@ -117,14 +117,14 @@
                         in others....
                         <a href="">More</a>
                     </p>
-                    <div class="text-center">
-                        <button routerLink="../card" class="btn-card">CART</button>
-                        <button routerLink="../view" class="btn-view">VIEW</button>
-                    </div>
+                  <div class="text-center">
+                    <button href="" class="btn-card"> VIEW</button>
+                    <button href="" class="btn-view" [routerLink]="['/product/',product.pro_id,'view']">ADD TO CART</button>
+                  </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" *ngFor = "let product of allProduct">
             <div class="card shadow">
                 <div class="hoverImg">
                     <img src="assets/images/product-2.jpg" alt="" class="card-img-top">
@@ -136,13 +136,13 @@
                         <a href="">More</a>
                     </p>
                     <div class="text-center">
-                        <button routerLink="../card" class="btn-card">CART</button>
-                        <button routerLink="../view" class="btn-view">VIEW</button>
+                        <button href="" class="btn-card">VIEW </button>
+                        <button href="" class="btn-view" [routerLink]="['/product/',product.pro_id,'view']">ADD TO CART</button>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" *ngFor = "let product of allProduct">
             <div class="card shadow">
                 <div class="hoverImg">
                     <img src="assets/images/product-3.jpg" alt="" class="card-img-top">
@@ -154,15 +154,15 @@
                         <a href="">More</a>
                     </p>
                     <div class="text-center">
-                        <button href="" class="btn-card">CART</button>
-                        <button href="" class="btn-view">VIEW</button>
+                        <button href="" class="btn-card">VIEW </button>
+                        <button href="" class="btn-view" [routerLink]="['/product/',product.pro_id,'view']">ADD TO CART</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="container row mt-4">
-        <div class="col-md-4">
+        <div class="col-md-4" *ngFor = "let product of allProduct">
             <div class="card shadow">
                 <div class="hoverImg">
                     <img src="assets/images/product-4.jpg" alt="" class="card-img-top">
@@ -174,13 +174,13 @@
                         <a href="">More</a>
                     </p>
                     <div class="text-center">
-                        <button href="" class="btn-card">CART</button>
-                        <button href="" class="btn-view">VIEW</button>
+                        <button href="" class="btn-card">VIEW </button>
+                        <button href="" class="btn-view" [routerLink]="['/product/',product.pro_id,'view']">ADD TO CART</button>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" *ngFor = "let product of allProduct">
             <div class="card shadow">
                 <div class="hoverImg">
                     <img src="assets/images/product-5.jpg" alt="" class="card-img-top">
@@ -192,13 +192,13 @@
                         <a href="">More</a>
                     </p>
                     <div class="text-center">
-                        <button href="" class="btn-card">CART</button>
-                        <button href="" class="btn-view">VIEW</button>
+                        <button href="" class="btn-card">VIEW </button>
+                        <button href="" class="btn-view" [routerLink]="['/product/',product.pro_id,'view']">ADD TO CART</button>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" *ngFor = "let product of allProduct">
             <div class="card shadow">
                 <div class="hoverImg">
                     <img src="assets/images/product-6.jpg" alt="" class="card-img-top">
@@ -210,14 +210,37 @@
                         <a href="">More</a>
                     </p>
                     <div class="text-center">
-                        <button href="" class="btn-card">CART</button>
-                        <button href="" class="btn-view">VIEW</button>
+                        <button href="" class="btn-card">VIEW </button>
+                        <button href="" class="btn-view" [routerLink]="['/product/',product.pro_id,'view']">ADD TO CART</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div><br><br>
+</div><br><br>-->
+<div class="container">
+  <h2>FEATURED PRODUCTS</h2>
+  <mat-divider></mat-divider><br>
+  <div class="container row">
+    <div class="col-md-4" *ngFor="let product of allProduct">
+      <div class="card shadow">
+        <div class="hoverImg">
+          <img [src]="'assets/images/product-'+product.pro_id+'.jpg'" alt="" class="card-img-top">
+        </div>
+        <div class="card-body">
+          <h4 class="card-title text-center font-weight-bold">{{product.pro_name}}</h4>
+          <p class="card-text text-center">{{product.pro_desc}}
+            <a href="">More</a>
+          </p>
+          <div class="text-center">
+            <button href="" class="btn-card">VIEW </button>
+            <button href="" class="btn-view" [routerLink]="['/product/',product.pro_id,'view']">ADD TO CART</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <!-- FEATURED PRODUCTS -->
 
 <!-- Contact Start -->
